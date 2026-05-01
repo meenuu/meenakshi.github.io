@@ -3,12 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- INTER FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
   <title>Meenakshi Pochincharla</title>
 
   <style>
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+      font-family: 'Inter', sans-serif;
       background: #f8fafc;
       color: #0f172a;
     }
@@ -30,15 +34,8 @@
     }
 
     .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       padding: 80px 10%;
-      gap: 40px;
-    }
-
-    .hero-text {
-      max-width: 600px;
+      max-width: 900px;
     }
 
     .tagline {
@@ -49,28 +46,31 @@
       font-size: 14px;
     }
 
-    /* CLEAN NAME */
+    /* 🔥 NAME (UPDATED) */
     h1 {
-      font-size: clamp(30px, 4vw, 48px);
+      font-size: clamp(48px, 6vw, 72px);
       margin: 16px 0;
-      line-height: 1.2;
-      color: #0f172a;
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: -1px;
     }
 
     h2 {
       font-size: 24px;
       color: #0284c7;
+      margin-bottom: 10px;
     }
 
     .typing-line {
       font-size: 20px;
-      font-weight: 600;
       margin-top: 12px;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
+      font-weight: 500;
     }
 
     #role {
       color: #0284c7;
+      font-weight: 700;
       border-right: 2px solid #0284c7;
       padding-right: 4px;
     }
@@ -100,69 +100,6 @@
       border: none;
     }
 
-    /* GALLERY */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    }
-
-    .gallery-item {
-      position: relative;
-      width: 140px;
-      height: 140px;
-      overflow: hidden;
-      border-radius: 12px;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: 0.3s;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.1);
-      filter: blur(2px) brightness(70%);
-    }
-
-    .caption {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 700;
-      opacity: 0;
-      transition: 0.3s;
-    }
-
-    .gallery-item:hover .caption {
-      opacity: 1;
-    }
-
-    section {
-      padding: 0 10%;
-      margin-top: 60px;
-    }
-
-    .card {
-      background: white;
-      padding: 20px;
-      margin-top: 20px;
-      border-radius: 12px;
-      border: 1px solid #e5e7eb;
-    }
-
-    .project-link {
-      display: inline-block;
-      margin-top: 10px;
-      color: #0284c7;
-      font-weight: 600;
-      text-decoration: none;
-    }
   </style>
 </head>
 
@@ -171,83 +108,46 @@
   <nav>
     <strong>MP</strong>
     <div>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="#">Experience</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
     </div>
   </nav>
 
   <div class="hero">
 
-    <div class="hero-text">
-      <div class="tagline">
-        Salesforce Engineer · AI · Enterprise Systems
-      </div>
-
-      <h1>Meenakshi Pochincharla</h1>
-
-      <h2>I build scalable Salesforce and AI-powered solutions.</h2>
-
-      <!-- TYPING ROLES -->
-      <div class="typing-line">
-        <span id="role"></span>
-      </div>
-
-      <p>
-        Product-oriented Salesforce Engineer with 7+ years of experience delivering global CRM systems,
-        integrations, and automation solutions with a strong focus on solving real-world business problems.
-      </p>
-
-      <div class="buttons">
-        <a href="#experience">Experience</a>
-        <a href="resume.pdf" target="_blank">Resume</a>
-        <a href="https://www.linkedin.com/in/mpochincharla/" target="_blank">LinkedIn</a>
-      </div>
+    <div class="tagline">
+      Salesforce Engineer · AI · Enterprise Systems
     </div>
 
-    <!-- GALLERY -->
-    <div class="gallery">
-      <div class="gallery-item">
-        <img src="images/img1.jpg" />
-        <div class="caption">ML Dashboard</div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/img2.jpg" />
-        <div class="caption">Streamlit App</div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/img3.jpg" />
-        <div class="caption">Salesforce Analytics</div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/img4.jpg" />
-        <div class="caption">Workspace</div>
-      </div>
+    <h1>Meenakshi Pochincharla</h1>
+
+    <h2>I build scalable Salesforce and AI-powered solutions.</h2>
+
+    <!-- TYPING -->
+    <div class="typing-line">
+      I'm a <span id="role"></span>
+    </div>
+
+    <p>
+      Product-oriented Salesforce Engineer with 7+ years of experience delivering global CRM systems,
+      integrations, and automation solutions with a strong focus on solving real-world business problems.
+    </p>
+
+    <div class="buttons">
+      <a href="#">Experience</a>
+      <a href="resume.pdf" target="_blank">Resume</a>
+      <a href="https://www.linkedin.com/in/mpochincharla/" target="_blank">LinkedIn</a>
     </div>
 
   </div>
 
-  <!-- PROJECT -->
-  <section id="projects">
-    <h3>Projects</h3>
-
-    <div class="card">
-      <h4>Recidivism Risk & Fairness Analysis</h4>
-      <p>
-        Built an end-to-end ML pipeline with fairness analysis and explainability using SHAP & LIME.
-      </p>
-
-      <a href="https://github.com/meenuu" target="_blank" class="project-link">GitHub →</a><br/>
-      <a href="https://compas-fairness-audit-yzrxpmq4srgv7hntxsny7k.streamlit.app/" target="_blank" class="project-link">Live Demo →</a>
-    </div>
-  </section>
-
   <script>
     const roles = [
-      "I design end-to-end ML models for real-world problems",
-      "Building scalable Salesforce solutions",
-      "ML engineer in progress — with real projects to show",
-      "Passionate about responsible AI and ethical systems"
+      "Salesforce Engineer building scalable systems",
+      "problem solver for complex enterprise challenges",
+      "ML developer building real-world models",
+      "technologist focused on responsible AI"
     ];
 
     let i = 0;
