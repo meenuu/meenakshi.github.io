@@ -82,15 +82,13 @@
 
     .typing-line {
       font-size: 21px;
-      font-weight: 500;
+      font-weight: 700;
       margin-top: 14px;
       margin-bottom: 18px;
-      color: #0f172a;
+      color: #0284c7;
     }
 
     #role {
-      color: #0284c7;
-      font-weight: 800;
       border-right: 2px solid #0284c7;
       padding-right: 4px;
     }
@@ -130,49 +128,22 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
+      flex-shrink: 0;
     }
 
-    .gallery-item {
-      position: relative;
+    .gallery img {
       width: 165px;
       height: 165px;
-      overflow: hidden;
+      object-fit: cover;
       border-radius: 18px;
       border: 1px solid #e5e7eb;
-      background: white;
-      cursor: pointer;
       box-shadow: 0 10px 22px rgba(15, 23, 42, 0.10);
+      transition: transform 0.3s ease, filter 0.3s ease;
     }
 
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.35s ease, filter 0.35s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.12);
-      filter: blur(2px) brightness(68%);
-    }
-
-    .caption {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 14px;
-      color: white;
-      font-size: 15px;
-      font-weight: 800;
-      opacity: 0;
-      transition: opacity 0.35s ease;
-    }
-
-    .gallery-item:hover .caption {
-      opacity: 1;
+    .gallery img:hover {
+      transform: scale(1.08);
+      filter: brightness(85%);
     }
 
     section {
@@ -218,8 +189,6 @@
       color: #0284c7;
       font-weight: 800;
       text-decoration: none;
-      position: relative;
-      z-index: 10;
     }
 
     .project-link:hover {
@@ -261,7 +230,7 @@
         font-size: clamp(36px, 10vw, 50px);
       }
 
-      .gallery-item {
+      .gallery img {
         width: 140px;
         height: 140px;
       }
@@ -292,7 +261,7 @@
       <h2>I build scalable Salesforce and AI-powered solutions.</h2>
 
       <div class="typing-line">
-        I'm a <span id="role"></span>
+        <span id="role"></span>
       </div>
 
       <p>
@@ -309,26 +278,12 @@
       </div>
     </div>
 
+    <!-- IMAGE GALLERY -->
     <div class="gallery">
-      <div class="gallery-item">
-        <img src="images/img1.jpg" alt="ML fairness dashboard" />
-        <div class="caption">ML Fairness Dashboard</div>
-      </div>
-
-      <div class="gallery-item">
-        <img src="images/img2.jpg" alt="Streamlit app" />
-        <div class="caption">Streamlit App</div>
-      </div>
-
-      <div class="gallery-item">
-        <img src="images/img3.jpg" alt="Salesforce analytics" />
-        <div class="caption">Salesforce Analytics</div>
-      </div>
-
-      <div class="gallery-item">
-        <img src="images/img4.jpg" alt="Workspace" />
-        <div class="caption">Building Solutions</div>
-      </div>
+      <img src="images/img1.jpg" alt="Project image 1" />
+      <img src="images/img4.jpg" alt="Project image 2" />
+      <img src="images/img3.jpg" alt="Project image 3" />
+      <img src="images/img2.jpg" alt="Project image 4" />
     </div>
 
   </div>
@@ -392,10 +347,9 @@
 
   <script>
     const roles = [
-      "Salesforce Engineer building scalable systems",
-      "problem solver for complex enterprise challenges",
-      "ML developer building real-world models",
-      "technologist focused on responsible AI"
+      "I'm a Salesforce Developer",
+      "I'm an ML Engineer building real-world solutions",
+      "I'm an original thinker"
     ];
 
     let i = 0;
