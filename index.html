@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Meenakshi Pochincharla</title>
 
+  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
@@ -22,14 +23,6 @@
       align-items: center;
       background: white;
       border-bottom: 1px solid #e5e7eb;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav strong {
-      font-size: 20px;
-      font-weight: 800;
     }
 
     nav a {
@@ -39,56 +32,55 @@
       font-weight: 600;
     }
 
-    nav a:hover {
-      color: #0284c7;
-    }
-
+    /* HERO */
     .hero {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 85px 10%;
-      gap: 55px;
+      padding: 80px 10%;
+      gap: 50px;
     }
 
     .hero-text {
-      max-width: 650px;
+      max-width: 600px;
     }
 
     .tagline {
       color: #0284c7;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
       font-size: 14px;
-      margin-bottom: 14px;
     }
 
+    /* NAME (reduced size) */
     h1 {
-      font-size: clamp(44px, 5.8vw, 76px);
-      margin: 14px 0;
-      line-height: 1.05;
+      font-size: clamp(40px, 5vw, 64px);
+      margin: 16px 0;
       font-weight: 800;
-      letter-spacing: -2px;
-      color: #0f172a;
+      letter-spacing: -1px;
     }
 
     h2 {
-      font-size: 25px;
+      font-size: 24px;
       color: #0284c7;
-      margin: 12px 0;
-      font-weight: 700;
     }
 
+    /* TYPING */
     .typing-line {
       font-size: 21px;
-      font-weight: 700;
       margin-top: 14px;
       margin-bottom: 18px;
-      color: #0284c7;
+      font-weight: 600;
+    }
+
+    .static-text {
+      color: #0f172a;
     }
 
     #role {
+      color: #0284c7;
+      font-weight: 700;
       border-right: 2px solid #0284c7;
       padding-right: 4px;
     }
@@ -102,15 +94,14 @@
     .buttons a {
       display: inline-block;
       margin-right: 14px;
-      margin-top: 22px;
-      padding: 12px 20px;
+      margin-top: 20px;
+      padding: 10px 18px;
       border-radius: 10px;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 600;
       border: 1px solid #cbd5e1;
       color: #0f172a;
       background: white;
-      transition: 0.2s ease;
     }
 
     .buttons a:first-child {
@@ -119,26 +110,21 @@
       border: none;
     }
 
-    .buttons a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
-    }
-
+    /* IMAGE GALLERY */
     .gallery {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
-      flex-shrink: 0;
     }
 
     .gallery img {
-      width: 165px;
-      height: 165px;
+      width: 160px;
+      height: 160px;
       object-fit: cover;
-      border-radius: 18px;
+      border-radius: 16px;
       border: 1px solid #e5e7eb;
-      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.10);
-      transition: transform 0.3s ease, filter 0.3s ease;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+      transition: 0.3s ease;
     }
 
     .gallery img:hover {
@@ -148,58 +134,27 @@
 
     section {
       padding: 0 10%;
-      margin-top: 65px;
-    }
-
-    h3 {
-      font-size: 28px;
-      margin-bottom: 12px;
-      color: #0f172a;
+      margin-top: 60px;
     }
 
     .card {
       background: white;
-      padding: 22px;
+      padding: 20px;
       margin-top: 20px;
-      border-radius: 14px;
+      border-radius: 12px;
       border: 1px solid #e5e7eb;
-      transition: 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    }
-
-    .card h4 {
-      margin: 0 0 8px;
-      font-size: 21px;
-      color: #0f172a;
-    }
-
-    .card p {
-      margin: 6px 0;
-      font-size: 16px;
-      color: #475569;
     }
 
     .project-link {
       display: inline-block;
-      margin-top: 12px;
+      margin-top: 10px;
       color: #0284c7;
-      font-weight: 800;
+      font-weight: 600;
       text-decoration: none;
     }
 
-    .project-link:hover {
-      text-decoration: underline;
-    }
-
-    #contact {
-      padding-bottom: 80px;
-    }
-
-    @media (max-width: 950px) {
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
       .hero {
         flex-direction: column;
         align-items: flex-start;
@@ -207,32 +162,6 @@
 
       .gallery {
         margin-top: 20px;
-      }
-    }
-
-    @media (max-width: 520px) {
-      nav {
-        padding: 18px 6%;
-      }
-
-      nav a {
-        margin-left: 12px;
-        font-size: 14px;
-      }
-
-      .hero,
-      section {
-        padding-left: 6%;
-        padding-right: 6%;
-      }
-
-      h1 {
-        font-size: clamp(36px, 10vw, 50px);
-      }
-
-      .gallery img {
-        width: 140px;
-        height: 140px;
       }
     }
   </style>
@@ -252,6 +181,7 @@
   <div class="hero">
 
     <div class="hero-text">
+
       <div class="tagline">
         Salesforce Engineer · AI · Enterprise Systems
       </div>
@@ -260,79 +190,43 @@
 
       <h2>I build scalable Salesforce and AI-powered solutions.</h2>
 
+      <!-- FIXED + ANIMATED -->
       <div class="typing-line">
+        <span class="static-text">I'm a </span>
         <span id="role"></span>
       </div>
 
       <p>
         Product-oriented Salesforce Engineer with 7+ years of experience delivering global CRM systems,
-        integrations, and automation solutions with a strong focus on solving real-world business problems,
-        data-driven decision-making, and client-facing ownership.
+        integrations, and automation solutions with a strong focus on solving real-world business problems.
       </p>
 
       <div class="buttons">
         <a href="#experience">Experience</a>
         <a href="resume.pdf" target="_blank">Resume</a>
         <a href="https://www.linkedin.com/in/mpochincharla/" target="_blank">LinkedIn</a>
-        <a href="mailto:meenakshi.pochincharla@gmail.com">Get in touch</a>
       </div>
+
     </div>
 
-    <!-- IMAGE GALLERY -->
+    <!-- IMAGES RIGHT -->
     <div class="gallery">
-      <img src="images/img1.jpg" alt="Project image 1" />
-      <img src="images/img4.jpg" alt="Project image 2" />
-      <img src="images/img3.jpg" alt="Project image 3" />
-      <img src="images/img2.jpg" alt="Project image 4" />
+      <img src="images/img1.jpg" />
+      <img src="images/img4.jpg" />
+      <img src="images/img3.jpg" />
+      <img src="images/img2.jpg" />
     </div>
 
   </div>
 
-  <section id="experience">
-    <h3>Experience</h3>
-
-    <div class="card">
-      <h4>Salesforce Technical Support Engineer</h4>
-      <p>
-        Resolved high-severity enterprise issues across Apex, Flows, and integrations, improving system stability and customer experience.
-      </p>
-      <p>
-        Analyzed recurring patterns and drove automation improvements, reducing resolution time.
-      </p>
-    </div>
-
-    <div class="card">
-      <h4>LTIMindtree | Salesforce Engineer</h4>
-      <p>
-        Delivered scalable Salesforce solutions for global clients across multi-region deployments and integrations.
-      </p>
-      <p>
-        Designed automation and data-driven workflows aligned with business requirements.
-      </p>
-    </div>
-
-    <div class="card">
-      <h4>Zensar Technologies | Salesforce Developer</h4>
-      <p>
-        Implemented ServiceMax and ITSM solutions to optimize field service operations and lifecycle visibility.
-      </p>
-      <p>
-        Built automation workflows and integrations to improve efficiency and cross-functional coordination.
-      </p>
-    </div>
-  </section>
-
+  <!-- PROJECT -->
   <section id="projects">
     <h3>Projects</h3>
 
     <div class="card">
       <h4>Recidivism Risk & Fairness Analysis</h4>
       <p>
-        Built an end-to-end ML pipeline using Logistic Regression and Random Forest with preprocessing,
-        feature engineering, cross-validation, and model evaluation.
-      </p>
-      <p>
-        Performed fairness analysis using FPR/FNR metrics and applied SHAP & LIME to interpret model behavior and uncover bias.
+        Built an end-to-end ML pipeline with fairness analysis and explainability using SHAP & LIME.
       </p>
 
       <a href="https://github.com/meenuu" target="_blank" class="project-link">GitHub →</a><br/>
@@ -340,6 +234,7 @@
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact">
     <h3>Contact</h3>
     <p>Email: meenakshi.pochincharla@gmail.com</p>
@@ -347,9 +242,9 @@
 
   <script>
     const roles = [
-      "I'm a Salesforce Developer",
-      "I'm an ML Engineer building real-world solutions",
-      "I'm an original thinker"
+      "Salesforce Developer",
+      "ML Engineer building real-world solutions",
+      "an original thinker"
     ];
 
     let i = 0;
