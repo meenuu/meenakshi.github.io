@@ -2,71 +2,126 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Meenakshi Pochincharla</title>
+
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
       background: #f8fafc;
       color: #0f172a;
     }
+
     nav {
-      padding: 28px 12%;
+      padding: 24px 10%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       background: white;
       border-bottom: 1px solid #e5e7eb;
     }
+
     nav a {
-      margin-left: 28px;
+      margin-left: 24px;
       text-decoration: none;
       color: #334155;
       font-weight: 600;
     }
+
     .hero {
-      padding: 90px 12%;
+      padding: 80px 10%;
       max-width: 900px;
     }
+
     .tagline {
-      color: #0369a1;
+      color: #0284c7;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
+      font-size: 14px;
     }
+
     h1 {
-      font-size: 70px;
-      margin: 20px 0 10px;
+      font-size: 64px;
+      margin: 16px 0;
       line-height: 1;
     }
+
     h2 {
-      font-size: 32px;
-      color: #0369a1;
+      font-size: 28px;
+      color: #0284c7;
+      margin-bottom: 16px;
     }
+
     p {
-      font-size: 20px;
+      font-size: 18px;
       line-height: 1.7;
       color: #475569;
     }
+
     .buttons a {
       display: inline-block;
-      margin-right: 16px;
+      margin-right: 14px;
       margin-top: 24px;
-      padding: 14px 24px;
+      padding: 12px 20px;
       border-radius: 10px;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 600;
       border: 1px solid #cbd5e1;
       color: #0f172a;
       background: white;
+      transition: 0.2s ease;
     }
+
     .buttons a:first-child {
-      background: #0369a1;
+      background: #0284c7;
       color: white;
+      border: none;
+    }
+
+    .buttons a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+
+    section {
+      margin-top: 60px;
+    }
+
+    h3 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    /* EXPERIENCE CARDS */
+    .exp-card {
+      background: white;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      transition: 0.2s ease;
+    }
+
+    .exp-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .exp-card h4 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    .exp-card p {
+      margin: 0;
+      font-size: 16px;
+      color: #475569;
     }
   </style>
 </head>
+
 <body>
 
   <nav>
@@ -74,51 +129,79 @@
     <div>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#resume">Resume</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
 
-  <section class="hero">
-    <div class="tagline">Salesforce Engineer · AI & CRM · Enterprise Systems · Product-Minded</div>
+  <div class="hero">
+
+    <div class="tagline">
+      Salesforce Engineer · AI & CRM · Enterprise Systems · Product-Minded
+    </div>
 
     <h1>Meenakshi Pochincharla</h1>
 
     <h2>I build scalable Salesforce and AI-powered business solutions.</h2>
 
     <p>
-      I’m a Salesforce Engineer with 7+ years of experience delivering enterprise CRM solutions,
-      global implementations, integrations, automation, and client-facing platform improvements.
-      I enjoy solving business problems through technology, data-driven thinking, and scalable systems.
+      Product-oriented Salesforce Engineer with 7+ years of experience delivering global CRM implementations,
+      integrations, and automation solutions. I focus on solving business problems through scalable systems,
+      data-driven thinking, and modern AI-powered workflows.
     </p>
 
     <div class="buttons">
       <a href="#experience">View Experience</a>
-      <a href="resume.pdf">Resume</a>
-      <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank">LinkedIn</a>
+      <a href="resume.pdf" target="_blank">Resume</a>
+      <a href="https://www.linkedin.com/in/mpochincharla/" target="_blank">LinkedIn</a>
       <a href="mailto:meenakshi.pochincharla@gmail.com">Get in touch</a>
     </div>
-  </section>
 
-  <section id="experience" class="hero">
-    <h2>Experience</h2>
-    <p>
-      Salesforce Technical Support Engineer · LTIMindtree Salesforce Engineer · Zensar Salesforce Developer/Admin
-    </p>
-  </section>
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h3>Experience</h3>
 
-  <section id="projects" class="hero">
-    <h2>Projects</h2>
-    <p>
-      ReRhythm — AI-powered career coaching platform<br>
-      Recidivism Risk & Fairness Analysis — ML fairness and explainability project
-    </p>
-  </section>
+      <div class="exp-card">
+        <h4>Salesforce Technical Support Engineer</h4>
+        <p>
+          Resolved high-severity enterprise issues across Apex, Flows, and integrations, improving system stability and customer experience.<br/>
+          Analyzed recurring case patterns and drove automation improvements, reducing resolution time.
+        </p>
+      </div>
 
-  <section id="contact" class="hero">
-    <h2>Contact</h2>
-    <p>Email: meenakshi.pochincharla@gmail.com</p>
-  </section>
+      <div class="exp-card">
+        <h4>LTIMindtree | Salesforce Engineer</h4>
+        <p>
+          Delivered scalable Salesforce solutions for global clients, supporting multi-region deployments and complex integrations.<br/>
+          Designed automation and data-driven workflows aligned with business requirements.
+        </p>
+      </div>
+
+      <div class="exp-card">
+        <h4>Zensar Technologies | Salesforce Developer</h4>
+        <p>
+          Implemented ServiceMax and ITSM solutions to optimize field service operations and lifecycle visibility.<br/>
+          Built automation workflows and integrations to improve efficiency and cross-functional coordination.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h3>Projects</h3>
+      <p>
+        ReRhythm — AI-powered career coaching platform<br/>
+        Recidivism Risk & Fairness Analysis — ML + bias analysis project<br/>
+      </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h3>Contact</h3>
+      <p>Email: meenakshi.pochincharla@gmail.com</p>
+    </section>
+
+  </div>
 
 </body>
 </html>
