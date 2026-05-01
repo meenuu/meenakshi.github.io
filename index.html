@@ -30,8 +30,15 @@
     }
 
     .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 80px 10%;
-      max-width: 900px;
+      gap: 40px;
+    }
+
+    .hero-text {
+      max-width: 600px;
     }
 
     .tagline {
@@ -43,21 +50,39 @@
     }
 
     h1 {
-      font-size: 64px;
+      font-size: 56px;
       margin: 16px 0;
-      line-height: 1;
     }
 
     h2 {
-      font-size: 28px;
+      font-size: 24px;
       color: #0284c7;
-      margin-bottom: 16px;
     }
 
     p {
       font-size: 18px;
       line-height: 1.7;
       color: #475569;
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      transition: 0.2s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
     }
 
     .buttons a {
@@ -71,7 +96,6 @@
       border: 1px solid #cbd5e1;
       color: #0f172a;
       background: white;
-      transition: 0.2s ease;
     }
 
     .buttons a:first-child {
@@ -80,45 +104,31 @@
       border: none;
     }
 
-    .buttons a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-    }
-
     section {
+      padding: 0 10%;
       margin-top: 60px;
     }
 
     h3 {
       font-size: 26px;
-      margin-bottom: 10px;
     }
 
-    /* EXPERIENCE CARDS */
-    .exp-card {
+    .card {
       background: white;
       padding: 20px;
       margin-top: 20px;
       border-radius: 12px;
       border: 1px solid #e5e7eb;
-      transition: 0.2s ease;
     }
 
-    .exp-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    .project-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: #0284c7;
+      font-weight: 600;
+      text-decoration: none;
     }
 
-    .exp-card h4 {
-      margin: 0 0 8px;
-      font-size: 20px;
-    }
-
-    .exp-card p {
-      margin: 0;
-      font-size: 16px;
-      color: #475569;
-    }
   </style>
 </head>
 
@@ -133,75 +143,82 @@
     </div>
   </nav>
 
+  <!-- HERO -->
   <div class="hero">
 
-    <div class="tagline">
-      Salesforce Engineer · AI & CRM · Enterprise Systems · Product-Minded
-    </div>
-
-    <h1>Meenakshi Pochincharla</h1>
-
-    <h2>I build scalable Salesforce and AI-powered business solutions.</h2>
-
-    <p>
-      Product-oriented Salesforce Engineer with 7+ years of experience delivering global CRM implementations,
-      integrations, and automation solutions. I focus on solving business problems through scalable systems,
-      data-driven thinking, and modern AI-powered workflows.
-    </p>
-
-    <div class="buttons">
-      <a href="#experience">View Experience</a>
-      <a href="resume.pdf" target="_blank">Resume</a>
-      <a href="https://www.linkedin.com/in/mpochincharla/" target="_blank">LinkedIn</a>
-      <a href="mailto:meenakshi.pochincharla@gmail.com">Get in touch</a>
-    </div>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <h3>Experience</h3>
-
-      <div class="exp-card">
-        <h4>Salesforce Technical Support Engineer</h4>
-        <p>
-          Resolved high-severity enterprise issues across Apex, Flows, and integrations, improving system stability and customer experience.<br/>
-          Analyzed recurring case patterns and drove automation improvements, reducing resolution time.
-        </p>
+    <div class="hero-text">
+      <div class="tagline">
+        Salesforce Engineer · AI · Enterprise Systems
       </div>
 
-      <div class="exp-card">
-        <h4>LTIMindtree | Salesforce Engineer</h4>
-        <p>
-          Delivered scalable Salesforce solutions for global clients, supporting multi-region deployments and complex integrations.<br/>
-          Designed automation and data-driven workflows aligned with business requirements.
-        </p>
-      </div>
+      <h1>Meenakshi Pochincharla</h1>
 
-      <div class="exp-card">
-        <h4>Zensar Technologies | Salesforce Developer</h4>
-        <p>
-          Implemented ServiceMax and ITSM solutions to optimize field service operations and lifecycle visibility.<br/>
-          Built automation workflows and integrations to improve efficiency and cross-functional coordination.
-        </p>
-      </div>
+      <h2>I build scalable Salesforce and AI-powered solutions.</h2>
 
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-      <h3>Projects</h3>
       <p>
-        ReRhythm — AI-powered career coaching platform<br/>
-        Recidivism Risk & Fairness Analysis — ML + bias analysis project<br/>
+        Product-oriented Salesforce Engineer with 7+ years of experience delivering global CRM systems,
+        integrations, and automation solutions with a strong focus on problem solving.
       </p>
-    </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <h3>Contact</h3>
-      <p>Email: meenakshi.pochincharla@gmail.com</p>
-    </section>
+      <div class="buttons">
+        <a href="#experience">Experience</a>
+        <a href="resume.pdf" target="_blank">Resume</a>
+        <a href="https://www.linkedin.com/in/mpochincharla/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+
+    <!-- IMAGE GALLERY -->
+    <div class="gallery">
+      <img src="img1.jpg" />
+      <img src="img2.jpg" />
+      <img src="img3.jpg" />
+      <img src="img4.jpg" />
+    </div>
 
   </div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h3>Experience</h3>
+
+    <div class="card">
+      <h4>Salesforce Technical Support Engineer</h4>
+      <p>Resolved high-severity enterprise issues across Apex, Flows, and integrations.</p>
+    </div>
+
+    <div class="card">
+      <h4>LTIMindtree | Salesforce Engineer</h4>
+      <p>Delivered scalable Salesforce solutions for global clients and integrations.</p>
+    </div>
+
+    <div class="card">
+      <h4>Zensar Technologies | Salesforce Developer</h4>
+      <p>Implemented ServiceMax and automation workflows for field service operations.</p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h3>Projects</h3>
+
+    <div class="card">
+      <h4>Recidivism Risk & Fairness Analysis</h4>
+      <p>
+        Built an end-to-end ML pipeline with Logistic Regression & Random Forest,
+        applying fairness metrics and SHAP/LIME for explainability.
+      </p>
+
+      <a href="YOUR_GITHUB_LINK" target="_blank" class="project-link">GitHub →</a><br/>
+      <a href="YOUR_STREAMLIT_LINK" target="_blank" class="project-link">Live Demo →</a>
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h3>Contact</h3>
+    <p>Email: meenakshi.pochincharla@gmail.com</p>
+  </section>
 
 </body>
 </html>
