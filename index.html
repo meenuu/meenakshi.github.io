@@ -1,315 +1,555 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Meenakshi Pochincharla</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meenakshi Pochincharla — Engineer & AI Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#F5F0E8;
+  --paper:#FDFAF5;
+  --ink:#0F0D0A;
+  --ink2:#1C1A16;
+  --muted:#8A8070;
+  --muted2:#B8B0A0;
+  --coral:#E8512A;
+  --coral2:#FF6B3D;
+  --coral-pale:#FDF0EB;
+  --border:#E0D8CC;
+  --border2:#CCC4B4;
+  --surface:#F0EBE0;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'Archivo',sans-serif;font-weight:300;overflow-x:hidden}
+::selection{background:var(--coral);color:#fff}
 
-  <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3.5rem;background:rgba(245,240,232,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:700;color:var(--ink);letter-spacing:-0.02em}
+.nav-logo span{color:var(--coral)}
+.nav-links{display:flex;align-items:center;gap:2.5rem}
+.nav-links a{font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--coral)}
+.nav-hire{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:var(--ink);padding:0.6rem 1.4rem;border-radius:100px;text-decoration:none;transition:background 0.2s}
+.nav-hire:hover{background:var(--coral)}
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Inter", sans-serif;
-      background: #f8fafc;
-      color: #0f172a;
-    }
+/* HERO — big magazine layout */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:7rem 3.5rem 4rem;position:relative;overflow:hidden;border-bottom:2px solid var(--ink)}
+.hero-bg-number{position:absolute;right:-0.05em;top:50%;transform:translateY(-60%);font-family:'Fraunces',serif;font-size:38vw;font-weight:900;color:transparent;-webkit-text-stroke:1px rgba(15,13,10,0.06);line-height:1;pointer-events:none;user-select:none;letter-spacing:-0.05em}
+.hero-tag{display:inline-flex;align-items:center;gap:0.5rem;background:var(--coral-pale);border:1px solid rgba(232,81,42,0.2);padding:0.35rem 1rem;border-radius:100px;margin-bottom:2.5rem}
+.hero-tag-dot{width:6px;height:6px;background:var(--coral);border-radius:50%;animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
+.hero-tag-text{font-family:'Fira Code',monospace;font-size:0.62rem;color:var(--coral);letter-spacing:0.1em}
+.hero-name{font-family:'Fraunces',serif;font-size:clamp(4rem,9vw,11rem);font-weight:900;line-height:0.88;letter-spacing:-0.04em;color:var(--ink);margin-bottom:1.5rem}
+.hero-name .line2{display:block;color:var(--coral);font-style:italic;font-weight:300;font-size:0.65em}
+.hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:3rem;flex-wrap:wrap;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border2)}
+.hero-desc{font-size:1.05rem;font-weight:300;color:var(--muted);max-width:500px;line-height:1.75}
+.hero-desc strong{color:var(--ink);font-weight:500}
+.hero-actions{display:flex;gap:1rem;flex-shrink:0}
+.btn-dark{font-family:'Archivo',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:var(--ink);padding:0.9rem 2rem;border-radius:100px;text-decoration:none;white-space:nowrap;transition:background 0.2s,transform 0.15s}
+.btn-dark:hover{background:var(--coral);transform:translateY(-2px)}
+.btn-outline{font-family:'Archivo',sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);border:1.5px solid var(--ink);padding:0.9rem 2rem;border-radius:100px;text-decoration:none;white-space:nowrap;transition:border-color 0.2s,color 0.2s,transform 0.15s}
+.btn-outline:hover{border-color:var(--coral);color:var(--coral);transform:translateY(-2px)}
 
-    nav {
-      padding: 24px 10%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
-    }
+/* HIGHLIGHT STRIP */
+.highlight-strip{
+  background:var(--ink);
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:none;
+}
+.hl-cell{
+  padding:2rem 2.5rem;
+  border-right:1px solid rgba(245,240,232,0.07);
+  display:flex;flex-direction:column;gap:0.4rem;
+  position:relative;overflow:hidden;
+}
+.hl-cell:last-child{border-right:none}
+.hl-cell::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--coral);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform 0.4s ease;
+}
+.hl-cell:hover::before{transform:scaleX(1)}
+.hl-num{
+  font-family:'Fraunces',serif;font-size:2.6rem;font-weight:900;
+  letter-spacing:-0.05em;color:var(--cream);line-height:1;
+  opacity:0;transform:translateY(12px);
+  transition:opacity 0.6s ease,transform 0.6s ease;
+}
+.hl-num sup{font-size:1rem;color:var(--coral);font-family:'Archivo',sans-serif;font-weight:700}
+.hl-label{
+  font-family:'Fira Code',monospace;font-size:0.58rem;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(245,240,232,0.35);
+}
+.hl-sub{
+  font-size:0.78rem;font-weight:300;
+  color:rgba(245,240,232,0.45);
+  line-height:1.5;margin-top:0.15rem;
+}
+.hl-cell.counted .hl-num{opacity:1;transform:none}
+@media(max-width:960px){.highlight-strip{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.highlight-strip{grid-template-columns:1fr}}
 
-    nav a {
-      margin-left: 24px;
-      text-decoration: none;
-      color: #334155;
-      font-weight: 600;
-    }
+/* SECTION GENERIC */
+section{padding:6rem 3.5rem;border-bottom:1px solid var(--border)}
+.over{font-family:'Fira Code',monospace;font-size:0.62rem;color:var(--coral);letter-spacing:0.2em;text-transform:uppercase;display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem}
+.over::before{content:'';width:24px;height:1px;background:var(--coral)}
+.s-title{font-family:'Fraunces',serif;font-size:clamp(2.2rem,4vw,4rem);font-weight:900;letter-spacing:-0.04em;line-height:1;color:var(--ink);margin-bottom:1.25rem}
+.s-title em{font-style:italic;font-weight:300;color:var(--muted)}
+.s-body{font-size:0.95rem;font-weight:300;color:var(--muted);max-width:560px;line-height:1.8}
 
-    /* HERO */
-    .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 80px 10%;
-      gap: 50px;
-    }
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease}
+.reveal.visible{opacity:1;transform:none}
 
-    .hero-text {
-      max-width: 600px;
-    }
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:start;margin-top:4rem}
+.about-text p{font-size:1rem;font-weight:300;color:var(--ink2);line-height:1.9;margin-bottom:1.5rem}
+.about-text p strong{color:var(--ink);font-weight:600}
+.about-text p em{font-style:italic;color:var(--coral)}
+.stat-boxes{display:flex;flex-direction:column;gap:1px}
+.stat-box{background:var(--paper);border:1px solid var(--border);padding:1.75rem 2rem;display:flex;flex-direction:column;gap:0.25rem;transition:background 0.2s}
+.stat-box:hover{background:var(--coral-pale)}
+.stat-box-num{font-family:'Fraunces',serif;font-size:3rem;font-weight:900;letter-spacing:-0.05em;color:var(--ink);line-height:1}
+.stat-box-num sup{font-size:1.2rem;color:var(--coral)}
+.stat-box-label{font-family:'Fira Code',monospace;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted)}
 
-    .tagline {
-      color: #0284c7;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-size: 14px;
-    }
+/* EXPERIENCE */
+.exp-items{margin-top:4rem;display:flex;flex-direction:column;gap:1px}
+.exp-card{background:var(--paper);border:1px solid var(--border);padding:0;overflow:hidden;transition:background 0.15s}
+.exp-card:hover{background:#fff}
+.exp-card-inner{display:grid;grid-template-columns:280px 1fr;min-height:140px}
+.exp-left{padding:2rem 2.5rem;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;gap:0.3rem}
+.exp-co{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:900;letter-spacing:-0.03em;color:var(--ink)}
+.exp-role{font-size:0.82rem;font-weight:500;color:var(--muted);margin-top:0.1rem}
+.exp-when{font-family:'Fira Code',monospace;font-size:0.58rem;color:var(--muted2);letter-spacing:0.1em;text-transform:uppercase;margin-top:0.5rem}
+.exp-right{padding:2rem 2.5rem;display:flex;align-items:center}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.exp-bullets li{font-size:0.85rem;font-weight:300;color:var(--ink2);line-height:1.65;padding-left:1.2rem;position:relative}
+.exp-bullets li::before{content:'→';position:absolute;left:0;top:0;color:var(--coral);font-size:0.72rem;font-weight:700}
 
-    /* NAME (reduced size) */
-    h1 {
-      font-size: clamp(40px, 5vw, 64px);
-      margin: 16px 0;
-      font-weight: 800;
-      letter-spacing: -1px;
-    }
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:4rem}
+.proj{background:var(--paper);border:1px solid var(--border);padding:2.5rem;display:flex;flex-direction:column;gap:1.5rem;transition:background 0.2s;position:relative;overflow:hidden}
+.proj::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--coral);transform:scaleX(0);transform-origin:left;transition:transform 0.3s ease}
+.proj:hover::after{transform:scaleX(1)}
+.proj:hover{background:#fff}
+.proj.span2{grid-column:1/-1}
+.proj-num{font-family:'Fira Code',monospace;font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted2)}
+.proj-title{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:900;letter-spacing:-0.03em;color:var(--ink);line-height:1.1}
+.proj.span2 .proj-title{font-size:2.2rem}
+.proj-body{font-size:0.85rem;font-weight:300;color:var(--muted);line-height:1.75;flex:1}
+.proj-tech{display:flex;flex-wrap:wrap;gap:6px}
+.tech-chip{font-family:'Fira Code',monospace;font-size:0.58rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--coral);background:var(--coral-pale);border:1px solid rgba(232,81,42,0.18);padding:3px 9px;border-radius:3px}
+.proj-foot{display:flex;gap:1.25rem;padding-top:1rem;border-top:1px solid var(--border);margin-top:auto}
+.proj-link{font-family:'Archivo',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:0.3rem;transition:color 0.2s}
+.proj-link:hover{color:var(--coral)}
+.proj-link svg{width:12px;height:12px;transition:transform 0.2s}
+.proj-link:hover svg{transform:translate(2px,-2px)}
 
-    h2 {
-      font-size: 24px;
-      color: #0284c7;
-    }
+/* SKILLS */
+.skills-section{background:var(--ink)}
+.skills-section .over{color:#E8512A}
+.skills-section .over::before{background:#E8512A}
+.skills-section .s-title{color:var(--cream)}
+.skills-section .s-body{color:rgba(245,240,232,0.45)}
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:4rem;border:1px solid rgba(255,255,255,0.07)}
+.skill-card{background:#161410;padding:2rem;transition:background 0.2s}
+.skill-card:hover{background:#1F1C18}
+.skill-cat{font-family:'Fira Code',monospace;font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:#E8512A;margin-bottom:0.75rem}
+.skill-name{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;color:var(--cream);margin-bottom:1rem;line-height:1.2}
+.skill-list{display:flex;flex-direction:column;gap:0.4rem}
+.skill-list li{font-size:0.78rem;font-weight:300;color:rgba(245,240,232,0.45);list-style:none;line-height:1.5}
 
-    /* TYPING */
-    .typing-line {
-      font-size: 21px;
-      margin-top: 14px;
-      margin-bottom: 18px;
-      font-weight: 600;
-    }
+/* CONTACT */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;margin-top:4rem}
+.contact-big{font-family:'Fraunces',serif;font-size:clamp(3rem,6vw,7rem);font-weight:900;letter-spacing:-0.05em;line-height:0.9;color:var(--ink)}
+.contact-big em{display:block;font-style:italic;font-weight:300;color:var(--coral)}
+.contact-links{display:flex;flex-direction:column;gap:0;border:1px solid var(--border)}
+.c-link{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.75rem;border-bottom:1px solid var(--border);text-decoration:none;transition:background 0.15s,padding-left 0.2s;background:var(--paper)}
+.c-link:last-child{border-bottom:none}
+.c-link:hover{background:var(--coral-pale);padding-left:2.25rem}
+.c-link-label{font-family:'Fira Code',monospace;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted)}
+.c-link-val{font-size:0.88rem;font-weight:500;color:var(--ink)}
+.c-link-arr{color:var(--coral);font-size:1rem;transition:transform 0.2s}
+.c-link:hover .c-link-arr{transform:translate(4px,-4px)}
 
-    .static-text {
-      color: #0f172a;
-    }
+/* FOOTER */
+footer{background:var(--ink);padding:2rem 3.5rem;display:flex;justify-content:space-between;align-items:center}
+.foot-copy{font-family:'Fira Code',monospace;font-size:0.6rem;color:rgba(245,240,232,0.25);letter-spacing:0.1em}
+.foot-links{display:flex;gap:2rem}
+.foot-link{font-family:'Archivo',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,240,232,0.35);text-decoration:none;transition:color 0.2s}
+.foot-link:hover{color:#E8512A}
 
-    #role {
-      color: #0284c7;
-      font-weight: 700;
-      border-right: 2px solid #0284c7;
-      padding-right: 4px;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1.7;
-      color: #475569;
-    }
-
-    .buttons a {
-      display: inline-block;
-      margin-right: 14px;
-      margin-top: 20px;
-      padding: 10px 18px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      border: 1px solid #cbd5e1;
-      color: #0f172a;
-      background: white;
-    }
-
-    .buttons a:first-child {
-      background: #0284c7;
-      color: white;
-      border: none;
-    }
-
-    /* IMAGE GALLERY */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-
-    .gallery img {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 16px;
-      border: 1px solid #e5e7eb;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-      transition: 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.08);
-      filter: brightness(85%);
-    }
-
-    section {
-      padding: 0 10%;
-      margin-top: 60px;
-    }
-
-    .card {
-      background: white;
-      padding: 20px;
-      margin-top: 20px;
-      border-radius: 12px;
-      border: 1px solid #e5e7eb;
-    }
-
-    .project-link {
-      display: inline-block;
-      margin-top: 10px;
-      color: #0284c7;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .hero {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .gallery {
-        margin-top: 20px;
-      }
-    }
-  </style>
+/* RESPONSIVE */
+.exp-extra-card:hover{background:#fff !important}
+@media(max-width:960px){
+  nav,section,footer,.hero{padding-left:1.5rem;padding-right:1.5rem}
+  .hero-name{font-size:clamp(3rem,12vw,6rem)}
+  .about-grid,.contact-wrap{grid-template-columns:1fr}
+  .projects-grid{grid-template-columns:1fr}
+  .proj.span2{grid-column:auto}
+  .exp-card-inner{grid-template-columns:1fr}
+  .exp-left{border-right:none;border-bottom:1px solid var(--border)}
+  .exp-extras{grid-template-columns:1fr !important}
+  .skills-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .nav-links{display:none}
+  .hero-bottom{flex-direction:column;align-items:flex-start}
+  .skills-grid{grid-template-columns:1fr}
+}
+</style>
 </head>
-
 <body>
 
-  <nav>
-    <strong>MP</strong>
-    <div>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+<nav>
+  <div class="nav-logo">MP<span>.</span></div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="mailto:meenakshi.pochincharla@gmail.com" class="nav-hire">Hire me</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg-number">M</div>
+  <div class="hero-tag">
+    <div class="hero-tag-dot"></div>
+    <span class="hero-tag-text">Open to opportunities</span>
+  </div>
+  <h1 class="hero-name">
+    Meenakshi
+    <span class="line2">Pochincharla</span>
+  </h1>
+  <div class="hero-bottom">
+    <p class="hero-desc">
+      <strong>Salesforce Engineer turned AI builder.</strong> 7+ years of enterprise systems. Now building real, deployed machine learning products that solve real problems.
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-dark">See my work</a>
+      <a href="https://meenuu.github.io/meenakshi.github.io/resume.pdf" target="_blank" class="btn-outline">Resume ↗</a>
     </div>
-  </nav>
+  </div>
+</div>
 
-  <div class="hero">
+<!-- HIGHLIGHT STRIP -->
+<div class="highlight-strip" id="hl-strip">
+  <div class="hl-cell">
+    <div class="hl-num" data-target="7">0<sup>+</sup></div>
+    <div class="hl-label">Years experience</div>
+    <div class="hl-sub">Enterprise Salesforce delivery across complex, large-scale orgs</div>
+  </div>
+  <div class="hl-cell">
+    <div class="hl-num" data-target="2">0</div>
+    <div class="hl-label">Live ML products</div>
+    <div class="hl-sub">Real deployed apps — not notebooks. Built end-to-end and shipped</div>
+  </div>
+  <div class="hl-cell">
+    <div class="hl-num" data-target="315">0</div>
+    <div class="hl-label">Features engineered</div>
+    <div class="hl-sub">Per artwork in the Met ML pipeline — TF-IDF, one-hot, era bucketing</div>
+  </div>
+  <div class="hl-cell">
+    <div class="hl-num" data-target="0">MS</div>
+    <div class="hl-label">Masters · UT Arlington</div>
+    <div class="hl-sub">Information Systems — Harvard Business Publishing case studies, real-world strategy</div>
+  </div>
+</div>
 
-    <div class="hero-text">
-
-      <div class="tagline">
-        Salesforce Engineer · AI · Enterprise Systems
+<!-- ABOUT -->
+<section id="about">
+  <div class="over reveal">01 — About me</div>
+  <h2 class="s-title reveal">Engineer first.<br><em>Builder always.</em></h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>I'm a <strong>product-oriented Salesforce engineer</strong> with 7+ years delivering enterprise CRM systems — from custom Apex and Lightning components to complex multi-org REST integrations at scale. Currently completing a <em>Master's in Information Systems at UT Arlington</em>.</p>
+      <p>What sets me apart is the deliberate pivot into <strong>AI and machine learning</strong>. I don't just run notebooks — I build and deploy real ML products with data pipelines, feature engineering, real-time model training, and production-ready UIs.</p>
+      <p>I'm looking for roles at the intersection of <strong>enterprise engineering and AI</strong> — where deep systems knowledge meets modern ML capability.</p>
+    </div>
+    <div class="stat-boxes reveal">
+      <div class="stat-box">
+        <div class="stat-box-num">7<sup>+</sup></div>
+        <div class="stat-box-label">Years of experience</div>
       </div>
-
-      <h1>Meenakshi Pochincharla</h1>
-
-      <h2>I build scalable Salesforce and AI-powered solutions.</h2>
-
-      <!-- FIXED + ANIMATED -->
-      <div class="typing-line">
-        <span class="static-text">I'm a </span>
-        <span id="role"></span>
+      <div class="stat-box">
+        <div class="stat-box-num">MS</div>
+        <div class="stat-box-label">Information Systems · UT Arlington</div>
       </div>
-
-      <p>
-        Product-oriented Salesforce Engineer with 7+ years of experience delivering global CRM systems,
-        integrations, and automation solutions with a strong focus on solving real-world business problems.
-      </p>
-
-      <div class="buttons">
-        <a href="#experience">Experience</a>
-        <a href="resume.pdf" target="_blank">Resume</a>
-        <a href="https://www.linkedin.com/in/mpochincharla/" target="_blank">LinkedIn</a>
+      <div class="stat-box">
+        <div class="stat-box-num">2</div>
+        <div class="stat-box-label">Live ML products</div>
       </div>
+    </div>
+  </div>
+</section>
 
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="over reveal">02 — Experience</div>
+  <h2 class="s-title reveal">Three companies.<br><em>One thread.</em></h2>
+  <p class="s-body reveal">Enterprise-scale Salesforce delivery, from field service automation to Fortune 500 support engineering.</p>
+  <div class="exp-items">
+    <div class="exp-card reveal">
+      <div class="exp-card-inner">
+        <div class="exp-left">
+          <div class="exp-co">Salesforce</div>
+          <div class="exp-role">Technical Support Engineer</div>
+          <div class="exp-when">Current</div>
+        </div>
+        <div class="exp-right">
+          <ul class="exp-bullets">
+            <li>Resolved high-severity enterprise issues across Apex, Flows, and integrations for Fortune 500 clients</li>
+            <li>Debugged complex transaction failures using debug logs, SOQL queries, and execution context analysis across multi-org environments</li>
+            <li>Identified recurring failure patterns and drove platform-level fixes, reducing repeat incidents</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="exp-card reveal">
+      <div class="exp-card-inner">
+        <div class="exp-left">
+          <div class="exp-co">LTIMindtree</div>
+          <div class="exp-role">Salesforce Engineer</div>
+          <div class="exp-when">Enterprise · Global</div>
+        </div>
+        <div class="exp-right">
+          <ul class="exp-bullets">
+            <li>Delivered scalable Salesforce solutions for Fortune 500 and global enterprise clients</li>
+            <li>Built custom Apex, Lightning Web Components, and REST integrations for complex enterprise workflows</li>
+            <li>Led CI/CD deployments and change management using Git-based versioning and controlled rollouts</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="exp-card reveal">
+      <div class="exp-card-inner">
+        <div class="exp-left">
+          <div class="exp-co">Zensar</div>
+          <div class="exp-role">Salesforce Developer</div>
+          <div class="exp-when">Field Service</div>
+        </div>
+        <div class="exp-right">
+          <ul class="exp-bullets">
+            <li>Implemented ServiceMax modules — Work Orders, Dispatch, Scheduling — for field service optimisation</li>
+            <li>Built process automation using Flows, validation rules, and integrations to reduce manual effort</li>
+            <li>Designed and configured modules to optimise technician workflows and service lifecycle visibility</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Extra highlights -->
+  <div class="exp-extras reveal" style="margin-top:1px;display:grid;grid-template-columns:1fr 1fr;gap:1px">
+    <div class="exp-extra-card" style="background:var(--paper);border:1px solid var(--border);padding:2rem 2.5rem;transition:background 0.15s">
+      <div style="font-family:'Fira Code',monospace;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted2);margin-bottom:0.6rem">Hackathon · DATA Showdown @ UTA</div>
+      <div style="font-family:'Fraunces',serif;font-size:1.2rem;font-weight:900;letter-spacing:-0.03em;color:var(--ink);margin-bottom:0.6rem">3rd Place 🏆</div>
+      <p style="font-size:0.84rem;font-weight:300;color:var(--ink2);line-height:1.65">Competed in a time-constrained data science challenge — applied data preprocessing, feature engineering, and model building under pressure. Recognised by judges from the CSE department at UT Arlington.</p>
+    </div>
+    <div class="exp-extra-card" style="background:var(--paper);border:1px solid var(--border);padding:2rem 2.5rem;transition:background 0.15s">
+      <div style="font-family:'Fira Code',monospace;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted2);margin-bottom:0.6rem">Harvard Business Publishing · Case Studies</div>
+      <div style="font-family:'Fraunces',serif;font-size:1.2rem;font-weight:900;letter-spacing:-0.03em;color:var(--ink);margin-bottom:0.6rem">Real-World Strategy</div>
+      <p style="font-size:0.84rem;font-weight:300;color:var(--ink2);line-height:1.65">Analysed Harvard Business Publishing case studies on top-tier global companies — evaluating the real business problems they faced, the strategies they chose, and what else they could have done. Translated insights into stakeholder-focused recommendations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="over reveal">03 — Projects</div>
+  <h2 class="s-title reveal">Built. Deployed.<br><em>Production-ready.</em></h2>
+  <p class="s-body reveal">Real ML pipelines from raw API data to live products. Not notebooks — shipped software.</p>
+  <div class="projects-grid">
+
+    <!-- Met Museum — featured full width -->
+    <div class="proj span2 reveal">
+      <div class="proj-num">Project 01 · Featured</div>
+      <div class="proj-title">Met Museum Personal Art Tour Generator</div>
+      <div class="proj-body">An AI that learns your art taste from 20 ratings and builds a personalised gallery-by-gallery tour of the Metropolitan Museum of Art — ranked by predicted enjoyment with SHAP explanations on every recommendation. Built a scraper against the Met's public API, engineered 315 features per artwork (TF-IDF + one-hot encoding + era bucketing), trains a Random Forest in real time, and outputs a full walking roadmap. 12 hardcoded must-see masterpieces — Van Gogh, Rembrandt, Vermeer, Monet, Pollock — guaranteed in every tour.</div>
+      <div class="proj-tech">
+        <span class="tech-chip">Python</span>
+        <span class="tech-chip">scikit-learn</span>
+        <span class="tech-chip">Random Forest</span>
+        <span class="tech-chip">SHAP</span>
+        <span class="tech-chip">TF-IDF</span>
+        <span class="tech-chip">pandas</span>
+        <span class="tech-chip">Streamlit</span>
+        <span class="tech-chip">Met Museum API</span>
+        <span class="tech-chip">Streamlit Cloud</span>
+      </div>
+      <div class="proj-foot">
+        <a href="https://met-art-recommender-ymje5stff6zbqmqpwexsxb.streamlit.app/" target="_blank" class="proj-link">Live Demo <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg></a>
+        <a href="https://github.com/meenuu" target="_blank" class="proj-link">GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg></a>
+      </div>
     </div>
 
-    <!-- IMAGES RIGHT -->
-    <div class="gallery">
-      <img src="images/img1.jpg" />
-      <img src="images/img4.jpg" />
-      <img src="images/img3.jpg" />
-      <img src="images/img2.jpg" />
+    <!-- COMPAS -->
+    <div class="proj reveal">
+      <div class="proj-num">Project 02</div>
+      <div class="proj-title">Recidivism Risk &amp; Fairness Audit</div>
+      <div class="proj-body">End-to-end ML pipeline analysing algorithmic bias in the COMPAS recidivism tool used in US criminal justice. Full fairness audit with SHAP and LIME explainability — demonstrating how AI systems encode and amplify societal bias.</div>
+      <div class="proj-tech">
+        <span class="tech-chip">Python</span>
+        <span class="tech-chip">SHAP</span>
+        <span class="tech-chip">LIME</span>
+        <span class="tech-chip">Fairness ML</span>
+        <span class="tech-chip">Streamlit</span>
+      </div>
+      <div class="proj-foot">
+        <a href="https://compas-fairness-audit-yzrxpmq4srgv7hntxsny7k.streamlit.app/" target="_blank" class="proj-link">Live Demo <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg></a>
+        <a href="https://github.com/meenuu" target="_blank" class="proj-link">GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg></a>
+      </div>
+    </div>
+
+    <!-- Coming soon -->
+    <div class="proj reveal" style="opacity:0.38;pointer-events:none">
+      <div class="proj-num">Project 03 · In progress</div>
+      <div class="proj-title">Next Project</div>
+      <div class="proj-body">Currently building. Check back soon.</div>
+      <div class="proj-tech"><span class="tech-chip">Coming soon</span></div>
     </div>
 
   </div>
-    <!-- EXPERIENCE -->
-  <section id="experience">
-    <h3>Experience</h3>
+</section>
 
-    <div class="card">
-      <h4>Salesforce Technical Support Engineer</h4>
-      <p>Resolved high-severity enterprise issues across Apex, Flows, and integrations.</p>
-      <p>Debugged complex transaction failures using debug logs, SOQL queries, and execution context analysis across multi-org environments. </p>
-      <p>Identified recurring failure patterns and drove platform-level fixes, reducing repeat incidents and improving system stability. </p>
+<!-- SKILLS -->
+<section class="skills-section" id="skills">
+  <div class="over reveal">04 — Skills</div>
+  <h2 class="s-title reveal">The full stack.</h2>
+  <p class="s-body reveal">Enterprise Salesforce depth. Modern ML capability. End-to-end delivery.</p>
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <div class="skill-cat">Salesforce</div>
+      <div class="skill-name">Platform Engineering</div>
+      <ul class="skill-list">
+        <li>Apex · Lightning Web Components</li>
+        <li>Flows · Process Automation</li>
+        <li>SOQL · SOSL</li>
+        <li>REST / SOAP Integrations</li>
+        <li>ServiceMax · CI/CD</li>
+      </ul>
     </div>
-
-    <div class="card">
-      <h4>LTIMindtree | Salesforce Engineer</h4>
-      <p>Delivered scalable Salesforce solutions for global clients and integrations.</p>
-      <p>Developed custom Apex, Lightning components, and REST integrations to support multi-region deployments (China, Taiwan, Vietnam).</p>
-      <p>Led release coordination, CI/CD deployments, and change management using Git-based versioning and controlled rollout strategies..</p>
+    <div class="skill-card reveal" style="transition-delay:0.1s">
+      <div class="skill-cat">Machine Learning</div>
+      <div class="skill-name">AI & ML</div>
+      <ul class="skill-list">
+        <li>scikit-learn · pandas · numpy</li>
+        <li>Random Forest · XGBoost</li>
+        <li>SHAP · LIME (Explainability)</li>
+        <li>TF-IDF · NLP</li>
+        <li>Recommendation Systems</li>
+      </ul>
     </div>
-
-    <div class="card">
-      <h4>Zensar Technologies | Salesforce Developer</h4>
-      <p>Implemented ServiceMax and automation workflows for field service operations.</p>
-      <p>Designed and configured ServiceMax modules (Work Orders, Dispatch, Scheduling) to optimize technician workflows and service lifecycle visibility.</p>
-      <p>Built process automation using Flows, validation rules, and integrations to streamline service operations and reduce manual effort.</p>
+    <div class="skill-card reveal" style="transition-delay:0.2s">
+      <div class="skill-cat">Engineering</div>
+      <div class="skill-name">Languages & Tools</div>
+      <ul class="skill-list">
+        <li>Python · Apex · SQL</li>
+        <li>Streamlit · GitHub</li>
+        <li>Feature Engineering</li>
+        <li>Data Pipelines</li>
+        <li>API Integration</li>
+      </ul>
     </div>
-  </section>
-  
-  <!-- PROJECT -->
-  <section id="projects">
-    <h3>Projects</h3>
-
-    <div class="card">
-      <h4>Recidivism Risk & Fairness Analysis</h4>
-      <p>
-        Built an end-to-end ML pipeline with fairness analysis and explainability using SHAP & LIME.
-      </p>
-
-      <a href="https://github.com/meenuu" target="_blank" class="project-link">GitHub →</a><br/>
-      <a href="https://compas-fairness-audit-yzrxpmq4srgv7hntxsny7k.streamlit.app/" target="_blank" class="project-link">Live Demo →</a>
-      
-      <h4>Met Museum · Personal Art Tour Generator</h4>
-      <p>Built a content-based ML recommendation system that learns your art taste in 20 ratings and generates a 
-          personalised gallery-by-gallery tour of the Met — Random Forest + SHAP, 2,022 artworks, deployed on Streamlit Cloud.</p>
-      
-      <a href="https://github.com/meenuu/met-art-recommender">GitHub →</a><br/>
-      <a href="https://met-art-recommender-ymje5stff6zbqmqpwexsxb.streamlit.app/">Live Demo →</a>
-      
+    <div class="skill-card reveal" style="transition-delay:0.3s">
+      <div class="skill-cat">Delivery</div>
+      <div class="skill-name">Enterprise & Global</div>
+      <ul class="skill-list">
+        <li>Multi-region deployments</li>
+        <li>Release coordination</li>
+        <li>Client-facing delivery</li>
+        <li>Problem-solving at scale</li>
+        <li>Agile / Scrum</li>
+      </ul>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h3>Contact</h3>
-    <p>Email: meenakshi.pochincharla@gmail.com</p>
-  </section>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="over reveal">05 — Get in touch</div>
+  <div class="contact-wrap">
+    <div class="contact-big reveal">
+      Let's<br>make<br>something<br><em>great.</em>
+    </div>
+    <div class="reveal">
+      <div class="contact-links">
+        <a href="mailto:meenakshi.pochincharla@gmail.com" class="c-link">
+          <div><div class="c-link-label">Email</div><div class="c-link-val">meenakshi.pochincharla@gmail.com</div></div>
+          <span class="c-link-arr">↗</span>
+        </a>
+        <a href="https://www.linkedin.com/in/mpochincharla/" target="_blank" class="c-link">
+          <div><div class="c-link-label">LinkedIn</div><div class="c-link-val">linkedin.com/in/mpochincharla</div></div>
+          <span class="c-link-arr">↗</span>
+        </a>
+        <a href="https://github.com/meenuu" target="_blank" class="c-link">
+          <div><div class="c-link-label">GitHub</div><div class="c-link-val">github.com/meenuu</div></div>
+          <span class="c-link-arr">↗</span>
+        </a>
+        <a href="https://meenuu.github.io/meenakshi.github.io/resume.pdf" target="_blank" class="c-link">
+          <div><div class="c-link-label">Resume</div><div class="c-link-val">Download PDF</div></div>
+          <span class="c-link-arr">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script>
-    const roles = [
-      "Salesforce Developer",
-      "ML Engineer building real-world solutions",
-      "an original thinker"
-    ];
+<footer>
+  <span class="foot-copy">© 2024 Meenakshi Pochincharla</span>
+  <div class="foot-links">
+    <a href="https://www.linkedin.com/in/mpochincharla/" target="_blank" class="foot-link">LinkedIn</a>
+    <a href="https://github.com/meenuu" target="_blank" class="foot-link">GitHub</a>
+    <a href="mailto:meenakshi.pochincharla@gmail.com" class="foot-link">Email</a>
+  </div>
+</footer>
 
-    let i = 0;
-    let j = 0;
-    let current = "";
-    let isDeleting = false;
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+let ly=0;const nav=document.querySelector('nav');
+window.addEventListener('scroll',()=>{const y=window.scrollY;nav.style.transform=y>ly&&y>100?'translateY(-100%)':'translateY(0)';nav.style.transition='transform 0.3s ease';ly=y},{passive:true});
 
-    function type() {
-      const role = roles[i];
-
-      if (isDeleting) {
-        current = role.substring(0, j--);
-      } else {
-        current = role.substring(0, j++);
-      }
-
-      document.getElementById("role").textContent = current;
-
-      if (!isDeleting && j === role.length) {
-        isDeleting = true;
-        setTimeout(type, 1200);
-      } else if (isDeleting && j === 0) {
-        isDeleting = false;
-        i = (i + 1) % roles.length;
-        setTimeout(type, 200);
-      } else {
-        setTimeout(type, isDeleting ? 40 : 80);
-      }
+/* Counter animation for highlight strip */
+function animateCount(el,target,duration){
+  const start=performance.now();
+  const hasSup=el.querySelector('sup');
+  const supHTML=hasSup?hasSup.outerHTML:'';
+  (function step(now){
+    const progress=Math.min((now-start)/duration,1);
+    const ease=1-Math.pow(1-progress,3);
+    const val=Math.round(ease*target);
+    el.innerHTML=val+(target>=300?'':'')+supHTML;
+    if(progress<1)requestAnimationFrame(step);
+    else el.innerHTML=target+supHTML;
+  })(start);
+}
+const stripObs=new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.hl-cell').forEach((cell,i)=>{
+        setTimeout(()=>{
+          cell.classList.add('counted');
+          const num=cell.querySelector('.hl-num');
+          const target=parseInt(num.dataset.target);
+          if(target>0){animateCount(num,target,1200);}else{cell.classList.add('counted');}
+        },i*120);
+      });
+      stripObs.unobserve(e.target);
     }
-
-    type();
-  </script>
-
+  });
+},{threshold:0.3});
+const strip=document.getElementById('hl-strip');
+if(strip)stripObs.observe(strip);
+</script>
 </body>
 </html>
